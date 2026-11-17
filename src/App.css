@@ -1,0 +1,113 @@
+/* =====================================================
+   1. GENERAL STYLES - used on every page
+   ===================================================== */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f2f5f7; color: #26323b; }
+h1, h2, h3 { margin-top: 0; }
+h2 { font-size: 26px; color: #214d70; margin-bottom: 10px; }
+h3 { font-size: 18px; margin-bottom: 14px; }
+p, li { line-height: 1.6; }
+a { color: #195a8c; }
+
+/* =====================================================
+   2. NAVBAR - src/components/Navbar.jsx
+   ===================================================== */
+.header { background: #214d70; color: white; }
+.header-inner { max-width: 1100px; margin: auto; padding: 18px 24px; }
+.header h1 { font-size: 24px; margin: 0 0 16px; }
+.header nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.header nav a { color: white; text-decoration: none; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
+.header nav a:hover, .header nav a.active { background: #386987; }
+
+/* =====================================================
+   3. PAGE LAYOUT AND FOOTER
+   ===================================================== */
+.main-content { max-width: 1100px; margin: 28px auto; padding: 0 20px; min-height: 65vh; }
+.page { background: white; padding: 28px; border: 1px solid #e1e5e8; border-radius: 5px; }
+.page > p { color: #5d6670; margin-top: 0; }
+.footer { background: #214d70; padding: 20px; text-align: center; color: white; font-size: 13px; }
+.box { border: 1px solid #dde3e7; background: #fbfcfd; padding: 20px; margin-top: 22px; border-radius: 4px; }
+
+/* =====================================================
+   4. FORMS AND BUTTONS - shared by several pages
+   ===================================================== */
+.form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: end; }
+label { display: block; font-weight: bold; font-size: 14px; margin-bottom: 7px; }
+input, select, textarea { width: 100%; border: 1px solid #bfcad2; border-radius: 4px; padding: 10px; font: inherit; background: white; }
+input:focus, select:focus, textarea:focus { outline: 2px solid #88b8d8; }
+button { background: #235d89; border: none; color: white; padding: 11px 16px; border-radius: 4px; font: inherit; cursor: pointer; }
+button:hover { background: #17496f; }
+button.secondary { background: #e6ebee; color: #26323b; }
+button.secondary:hover { background: #d8e0e5; }
+button.small { padding: 7px 10px; font-size: 13px; }
+.form-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+.notice { margin-top: 14px; padding: 10px; background: #f1f5fa; border-left: 3px solid #235d89; }
+
+/* =====================================================
+   5. TABLES - Students, Courses and Grades pages
+   ===================================================== */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid #e3e8eb; }
+th { background: #e9eff3; color: #294658; }
+.actions { display: flex; gap: 7px; }
+.section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.section-heading span { font-weight: bold; color: #214d70; }
+
+/* =====================================================
+   6. HOME PAGE - src/pages/Home.jsx
+   ===================================================== */
+.home-page .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0 28px; }
+.summary-box { border: 1px solid #d4e0e8; background: #f3f8fb; padding: 24px 15px; text-align: center; border-radius: 4px; }
+.summary-box strong { display: block; font-size: 30px; color: #214d70; margin-bottom: 6px; }
+.summary-box span { color: #4a5d6e; }
+.quick-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.quick-links a { border: 1px solid #aac2d2; padding: 12px 16px; text-decoration: none; border-radius: 4px; }
+.quick-links a:hover { background: #f0f6fa; }
+
+/* =====================================================
+   7. STUDENTS PAGE - src/pages/Students.jsx
+   ===================================================== */
+/* Student form and table use the shared .form-grid and table styles above. */
+
+/* =====================================================
+   8. COURSES PAGE - src/pages/Courses.jsx
+   ===================================================== */
+/* Course form and table use the shared .form-grid and table styles above. */
+
+/* =====================================================
+   9. GRADES PAGE - src/pages/Grades.jsx
+   ===================================================== */
+/* Grades form and table use shared styles. The average uses .section-heading. */
+
+/* =====================================================
+   10. FEATURES PAGE - src/pages/Features.jsx
+   ===================================================== */
+.feature-list { padding-left: 25px; }
+.feature-list li { margin-bottom: 10px; }
+
+/* =====================================================
+   11. ABOUT PAGE - src/pages/About.jsx
+   ===================================================== */
+/* About is a simple text page, so the general styles are enough. */
+
+/* =====================================================
+   12. CONTACT PAGE - src/pages/Contact.jsx
+   ===================================================== */
+.contact-page form { max-width: 550px; }
+.contact-page textarea { display: block; margin-bottom: 14px; resize: vertical; }
+
+/* =====================================================
+   13. MOBILE STYLES - for smaller screens
+   ===================================================== */
+@media (max-width: 750px) {
+  .header-inner { padding: 15px; }
+  .header h1 { font-size: 21px; }
+  .header nav a { font-size: 13px; padding: 8px; }
+  .main-content { margin: 16px auto; padding: 0 10px; }
+  .page { padding: 18px; }
+  .box { padding: 13px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .home-page .summary { grid-template-columns: 1fr; }
+  .actions { white-space: nowrap; }
+}
